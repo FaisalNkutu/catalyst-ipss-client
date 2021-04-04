@@ -1,0 +1,29 @@
+keyVaultName: catalystAPIKeys
+tokenUrl: "http://localhost:8080/token"
+baseUrl: "https://catalystdevportal.bcnl.digitalaviationservices.com" #http://localhost:8080/trainingProgram
+env: 
+  dev:
+    azurekey: 
+      secretName: azure-boeing-catalyst-trainingprogram-apikey
+      secretValue: azure-boeing-catalyst-trainingprogram-keyvalue
+    configuration:
+      subscriptionid: 9069b3bb3fb8485998b267a0fd1195ce
+      uri: profile/
+      apiKeyName: 
+    trainingprogram:
+      subscriptionid: tbd
+      uri: tbd
+    trainingmanagement:
+      subscriptionid:  tbd
+      uri: tbd
+# 1. Create Key Store: keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore keystore.p12 -validity 3650 -storepass password
+# 2. Import Catalyst Ccert: keytool -import cert -alias boeing-catalyst -file Boeing Basic Assurance Software Root CA G2.cer -keystore keystore.p12 
+# 3. Uncomment SSL Configuration Below:        
+# server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: password
+#    key-store-type: pkcs12
+#    key-alias: tomcat
+#    key-password: password
+#  port: 8443
